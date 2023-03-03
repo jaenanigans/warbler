@@ -24,7 +24,7 @@ messageSchema.pre('remove', async function (next) {
 		user.messages.remove(this.id);
 		await user.save();
 		return next();
-	} catch (e) {
+	} catch (err) {
 		return next(err);
 	}
 });

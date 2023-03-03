@@ -30,8 +30,8 @@ export function authUser(type, userData) {
 					localStorage.setItem('jwtToken', token);
 					setAuthorizationToken(token);
 					dispatch(setCurrentUser(user));
-					resolve(); // indicate that the API call succeeded
 					dispatch(removeError());
+					resolve(); // indicate that the API call succeeded
 				})
 				.catch((err) => {
 					dispatch(addError(err.message));
